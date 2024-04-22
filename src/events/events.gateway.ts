@@ -81,6 +81,7 @@ export class EventsGateway {
       from ${SCHEMA}.questions
       where
         questionnaire_id = ${id}
+      order by id asc
     `;
     const questions = result.flat() as Question[];
     return { meta, questions };
